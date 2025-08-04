@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlético Nacional - El Rey de Copas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>ATLÉTICO NACIONAL</h1>
+        <p>El Rey de Copas - Medellín, Colombia</p>
+    </header>
+
+    <!-- Carrusel -->
+    <div class="carousel-container">
+        <div class="carousel" id="carousel">
+            <img src="images/nacional.png" alt="Estadio Atanasio Girardot">
+            <img src="images/nacional2.jpeg" alt="Escudo Atlético Nacional">
+            <img src="images/nacional3.jpeg" alt="Hinchada Verde">
+        </div>
+        <button class="carousel-btn prev" onclick="prevSlide()">❮</button>
+        <button class="carousel-btn next" onclick="nextSlide()">❯</button>
+    </div>
+
+    <div class="container">
+        <!-- Historia del Club -->
+        <section class="section">
+            <h2>Historia del Club</h2>
+            <p>
+                Atlético Nacional fue fundado el 7 de marzo de 1947 en Medellín, Colombia. Desde sus inicios, el club se ha caracterizado por ser una institución que representa los valores y la pasión del pueblo antioqueño y colombiano.
+            </p>
+            <p>
+                A lo largo de su historia, Nacional se ha consolidado como uno de los equipos más exitosos de Colombia y Sudamérica. Ha conquistado múltiples títulos de liga colombiana y se ha destacado especialmente en competiciones internacionales, siendo conocido mundialmente como "El Rey de Copas".
+            </p>
+            <p>
+                El club alcanzó su máximo logro en 1989 cuando se coronó campeón de la Copa Libertadores de América, convirtiéndose en el primer equipo colombiano en conseguir este prestigioso título. Posteriormente, también conquistó la Copa Interamericana.
+            </p>
+            <p>
+                Sus colores tradicionales, el verde y el blanco, representan la esperanza y la pureza. El verde simboliza las montañas de Antioquia y la naturaleza exuberante de la región, mientras que el blanco representa la paz y la nobleza del pueblo paisa.
+            </p>
+            <p>
+                Nacional ha sido cuna de grandes futbolistas que han brillado tanto a nivel nacional como internacional, contribuyendo significativamente al desarrollo del fútbol colombiano y dejando una huella imborrable en la historia del deporte en el país.
+            </p>
+        </section>
+
+        <!-- Ubicación -->
+        <section class="section">
+            <h2>Ubicación - Estadio Atanasio Girardot</h2>
+            <div class="location-content">
+                <div class="location-info">
+                    <div class="address">
+                        <h3>Dirección:</h3>
+                        <p><strong>Estadio Atanasio Girardot</strong><br>
+                        Carrera 74 # 48-21<br>
+                        Medellín, Antioquia<br>
+                        Colombia</p>
+                    </div>
+                    <p style="margin-top: 20px;">
+                        El Estadio Atanasio Girardot es el hogar de Atlético Nacional desde 1953. Con capacidad para más de 40.000 espectadores, es uno de los estadios más importantes de Colombia y ha sido testigo de los momentos más gloriosos del club.
+                    </p>
+                </div>
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.0234567890123!2d-75.5861!3d6.2442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4428dfb80fad05%3A0x42137cfcc7b53b56!2sEstadio%20Atanasio%20Girardot!5e0!3m2!1sen!2sco!4v1234567890123"
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!4v1754318312614!6m8!1m7!1sRJLcyW9OAku0ylM9Lq5EZw!2m2!1d6.257097237879012!2d-75.58925672176447!3f56.74455642909101!4f0!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Redes Sociales -->
+        <section class="section social-media">
+            <h2>Redes Sociales</h2>
+            <p>Sigue a Atlético Nacional en todas nuestras plataformas digitales para estar al día con las últimas noticias, resultados y contenido exclusivo del Rey de Copas.</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/nacionaloficial" class="social-link" target="_blank">Facebook</a>
+                <a href="https://www.twitter.com/nacionaloficial" class="social-link" target="_blank">Twitter</a>
+                <a href="https://www.instagram.com/nacionaloficial" class="social-link" target="_blank">Instagram</a>
+                <a href="https://www.youtube.com/nacionaloficial" class="social-link" target="_blank">YouTube</a>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p> 2024 Atlético Nacional - El Rey de Copas | Medellín, Colombia </p>
+        <p>Juan José Duque |  Danilo Muñoz</p>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('#carousel img');
+        const totalSlides = slides.length;
+
+        function showSlide(n) {
+            const carousel = document.getElementById('carousel');
+            if (n >= totalSlides) currentSlide = 0;
+            if (n < 0) currentSlide = totalSlides - 1;
+            carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        function nextSlide() {
+            currentSlide++;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide--;
+            showSlide(currentSlide);
+        }
+
+        // Auto-play del carrusel
+        setInterval(nextSlide, 5000);
+    </script>
+
+    <div class="video">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/SE_ObNHrA1Q?si=83JAeWDCe4IvACcP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+</body>
+</html>
+
